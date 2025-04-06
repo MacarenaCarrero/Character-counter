@@ -12,19 +12,25 @@ const checkboxElement = document.getElementById('checkbox');
 
 const checkText = () => {
   let text = textAreaElement.value;
-  let textLength = text.length;
   let word = text.match(/\b\w+\b/g);
 
   counterCharactersElement.textContent = textLength;
   counterWordsElement.textContent = word.length;
 };
 
-const checkCounSentences = () => {
-  if (text.endsWith('.')) {
-    return sentence;
+const deleteSpace = () => {
+  const noSpace = textAreaElement.replaceAll(' ', '');
+  if (checkboxElement.checked) {
+    return noSpace;
+  } else {
+    return text;
   }
+};
+
+const checkCountSentences = () => {
   counterSentencesElement.textContent = sentence.length;
 };
 
 textAreaElement.addEventListener('input', checkText);
-textAreaElement.addEventListener('input', checkCounSentences);
+textAreaElement.addEventListener('input', checkCountSentences);
+checkboxElement.addEventListener('click', deleteSpace);
