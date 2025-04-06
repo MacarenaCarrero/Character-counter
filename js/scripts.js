@@ -17,13 +17,8 @@ const checkCounterCharacter = () => {
 };
 
 // funcion para words
-let totalWords = 0;
-const checkCounterWords = () => {
-  if (text.endsWith(' ') || text.endsWith('.')) {
-    totalWords++;
-  }
-  counterWordsElement.textContent = totalWords;
-};
+
+const checkCounterWords = () => {};
 
 textAreaElement.addEventListener('input', checkCounterCharacter);
 textAreaElement.addEventListener('input', checkCounterWords);
