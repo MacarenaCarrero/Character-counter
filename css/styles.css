@@ -20,5 +20,79 @@ nav ul {
 }
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "DM Sans", sans-serif;
+  background-image: url(../assets/images/bg-dark-theme.png);
+  background-size:auto;
+  background-repeat:no-repeat ;
+  color:#E4E4EF ;
+}
+.navBar{
+  display: flex;
+  justify-content: space-between;
+  width: 23.4375rem;
+   padding: 1.0625rem;
+}
+.iconoDarkMode{
+width: 11.525rem;
+height: 1.875rem;
+}
+.setting{
+  width: 2rem;
+  height: 2rem;
+}
+
+.globalContainer{
+  display: flex;
+  flex-direction: column;
+  padding-inline: 1.0625rem;
+}
+.title{
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.0625rem;
+}
+.textArea{
+  padding: 1.25rem;
+  height: 12.5rem;
+  width: 21.4375rem;
+  background-color:#2A2B37 ;
+  color: #E4E4EF;
+  border: solid rgb(228 228 239/0.30) 0.125rem ;
+  border-radius: 0.75rem;
+  box-shadow: #0F0F0F 0 0.125rem 0.3125rem;
+  margin-bottom: 1rem;
+}
+.card{
+  padding-inline: 1.25rem;
+width: 21.4375rem;
+height: 8.125rem;
+border-radius: 0.75rem;
+background-repeat: no-repeat;
+background-position: 250px;
+background-size: 45%;
+color:#12131A ;
+
+}
+.totalCharacters{
+  background-color: #D3A0FA;
+  background-image: url(../assets/images/pattern-character-count.svg);
+}
+.wordCount{
+  background-color:#FF9F00 ;
+  background-image: url(../assets/images/pattern-word-count.svg);
+}
+.sentenceCount{
+  background-color: #FE8159;
+  background-image: url(../assets/images/pattern-sentence-count.svg);
+}
+.numbers{
+font-size: 2.5rem;
+  font-weight: 700; 
+}
+.description{
+  font-size: 1.25rem;
+}
+.cards{
+  margin-bottom: 2.5rem;
 }
