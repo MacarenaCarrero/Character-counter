@@ -10,26 +10,24 @@ const checkboxElement = document.getElementById('checkbox');
 
 //funcion para analizar el texto
 let text = '';
+
 const checkText = () => {
   text = textAreaElement.value;
+  const analizerText = disabledCheckBox();
   let word = text.match(/\b\w+\b/g);
 
-  counterCharactersElement.textContent = text.length;
+  counterCharactersElement.textContent = analizerText.length;
   counterWordsElement.textContent = word.length;
 };
 
-const deleteSpace = () => {
+const disabledCheckBox = () => {
   if (checkboxElement.checked) {
-    textreplaceAll(' ', '');
+    return text.replaceAll(' ', '');
   } else {
-    text;
+    return text;
   }
 };
 
-// const checkCountSentences = () => {
-//   counterSentencesElement.textContent = sentence.length;
-// };
-
 textAreaElement.addEventListener('input', checkText);
-// textAreaElement.addEventListener('input', checkCountSentences);
-checkboxElement.addEventListener('click', deleteSpace);
+
+checkboxElement.addEventListener('change', checkText);
