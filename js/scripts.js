@@ -8,24 +8,30 @@ const textAreaElement = document.getElementById('textArea');
 // checkBox
 const checkboxElement = document.getElementById('checkbox');
 
-//funcion para analizar el texto
-let text = '';
+// const checkText = () => {
+//   text = textAreaElement.value;
+//   const analizerText = disabledCheckBox();
+//   let word = text.match(/\b\w+\b/g);
 
-const checkText = () => {
-  text = textAreaElement.value;
-  const analizerText = disabledCheckBox();
-  let word = text.match(/\b\w+\b/g);
+//   counterCharactersElement.textContent = analizerText.length;
+//   counterWordsElement.textContent = word.length;
+// };
 
-  counterCharactersElement.textContent = analizerText.length;
+// const disabledCheckBox = () => {
+//   if (checkboxElement.checked) {
+//     return text.replaceAll(' ', '');
+//   } else {
+//     return text;
+//   }
+// };
+
+const countWords = text => {
+  const word = text.split(' ');
   counterWordsElement.textContent = word.length;
 };
 
-const disabledCheckBox = () => {
-  if (checkboxElement.checked) {
-    return text.replaceAll(' ', '');
-  } else {
-    return text;
-  }
+const checkText = () => {
+  const text = textAreaElement.value;
 };
 
 textAreaElement.addEventListener('input', checkText);
