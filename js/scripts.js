@@ -8,32 +8,39 @@ const textAreaElement = document.getElementById('textArea');
 // checkBox
 const checkboxElement = document.getElementById('checkbox');
 
-// const checkText = () => {
-//   text = textAreaElement.value;
-//   const analizerText = disabledCheckBox();
-//   let word = text.match(/\b\w+\b/g);
+//funcion para coger el valor del texto
+const analizerText = () => {
+  let text = textAreaElement.value;
+  if (checkboxElement.checked) {
+    return text.replaceAll(' ', '');
+  } else {
+    return text;
+  }
+};
 
-//   counterCharactersElement.textContent = analizerText.length;
-//   counterWordsElement.textContent = word.length;
-// };
+//characters
 
-// const disabledCheckBox = () => {
-//   if (checkboxElement.checked) {
-//     return text.replaceAll(' ', '');
-//   } else {
-//     return text;
-//   }
-// };
+const countCharacters = () => {
+  let text = analizerText();
+  counterCharactersElement.textContent = text.length;
+};
 
-const countWords = text => {
+// ahora palabras
+const countWords = () => {
+  let text = analizerText();
   const word = text.split(' ');
   counterWordsElement.textContent = word.length;
 };
 
-const checkText = () => {
-  const text = textAreaElement.value;
+// sentenceeees
+
+const countSentences = () => {
+  let text = analizerText();
+  const sentences = text.split('.');
+  counterSentencesElement.textContent = sentences.length;
 };
 
-textAreaElement.addEventListener('input', checkText);
-
-checkboxElement.addEventListener('change', checkText);
+textAreaElement.addEventListener('input', analizerText); //escucho el texto y llamo a la funcion
+textAreaElement.addEventListener('input', countWords);
+textAreaElement.addEventListener('input', countCharacters);
+textAreaElement.addEventListener('input', countSentences);
