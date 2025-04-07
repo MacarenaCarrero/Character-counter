@@ -8,6 +8,9 @@ const textAreaElement = document.getElementById('textArea');
 // checkBox
 const checkboxElement = document.getElementById('checkbox');
 
+//id span
+const minElement = document.getElementById('min');
+
 //funcion para coger el valor del texto
 const analizerText = () => {
   let text = textAreaElement.value;
@@ -40,7 +43,18 @@ const countSentences = () => {
   counterSentencesElement.textContent = sentences.length;
 };
 
+//tiempo
+
+const time = () => {
+  const textTime = textAreaElement.value;
+  const words = textTime.split(' ');
+  const minutes = words.length / 250;
+
+  minElement.textContent = minutes;
+};
+
 textAreaElement.addEventListener('input', analizerText); //escucho el texto y llamo a la funcion
 textAreaElement.addEventListener('input', countWords);
 textAreaElement.addEventListener('input', countCharacters);
 textAreaElement.addEventListener('input', countSentences);
+textAreaElement.addEventListener('input', time);
